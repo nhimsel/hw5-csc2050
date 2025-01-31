@@ -7,7 +7,6 @@ class Player extends Object
     
     public Player(String name)
     {
-        //who is super?
         this.name = name;
         
         Dice hpDice = new Dice(16);

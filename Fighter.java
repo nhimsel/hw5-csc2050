@@ -5,8 +5,7 @@ public class Fighter extends Player
     public Fighter(String name)
     {
         //call our parent's constructor so we can build our baseline
-        super(name); //the call to parents constructor must be first in java
-        //this.display();
+        super(name); 
         Dice d4 = new Dice(4);
         Dice d100 = new Dice(100);
         this.rage = d100.roll();

@@ -9,8 +9,6 @@ class Room
     {
         this.name = name;
         this.thePlayer = null;
-        
-        //this.display(); //for testing purposes as the room is built
     }
     
     public void addExit(String direction, Room destination)
@@ -36,8 +34,6 @@ class Room
     {
         System.out.println("Room: " + this.name);
         
-        //inline if statement example
-        //System.out.println("Also here: " + ((this.thePlayer != null)?this.thePlayer.getName():"nobody"));
         if(this.thePlayer != null)
         {
             System.out.println("Also here: " + this.thePlayer.getName());
@@ -48,7 +44,6 @@ class Room
 
         }
         
-        //show obvious exits:
         System.out.print("Obvious Exits: ");
         if(this.currNumberOfExits == 0)
         {
