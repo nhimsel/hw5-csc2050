@@ -4,6 +4,7 @@ public class Dungeon
 {
     private String name;
     private Player thePlayer;
+	private Room curRoom = null;
     
     public Dungeon(String name, Player thePlayer)
     {
@@ -28,7 +29,15 @@ public class Dungeon
 	    r5.addExit("west", r3);
 	    r6.addExit("south", r3);
 
-    }
+		this.curRoom = r1;
+	}
+
+	private void moveRoom(Room r)
+	{
+		this.curRoom.removeThePlayer();
+		this.curRoom = r;
+		this.curRoom.setThePlayer(thePlayer);
+	}
     
     public void play()
     {

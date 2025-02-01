@@ -29,6 +29,11 @@ class Room
     {
         this.thePlayer = thePlayer;
     }
+
+    public void removeThePlayer()
+    {
+        this.thePlayer = null;
+    }
     
     public void display()
     {
@@ -43,7 +48,7 @@ class Room
             System.out.println("Also here: nobody");
 
         }
-        
+
         System.out.print("Obvious Exits: ");
         if(this.currNumberOfExits == 0)
         {
