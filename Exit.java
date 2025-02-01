@@ -13,4 +13,9 @@ public class Exit
     {
         return this.direction;
     }
+
+    public Room getDestinataion()
+    {
+        return this.destination;
+    }
 }

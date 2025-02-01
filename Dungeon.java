@@ -38,6 +38,11 @@ public class Dungeon
 		this.curRoom = r;
 		this.curRoom.setThePlayer(thePlayer);
 	}
+
+	private boolean checkAvailablilty(String s)
+	{
+		return (this.curRoom.getDestination(s)!=null);
+	}
     
     public void play()
     {
@@ -45,11 +50,23 @@ public class Dungeon
 	    String direction = "";
 	    do
 	    {
+			System.out.println("Current location: " + this.curRoom);
 	        System.out.print("enter a direction: ");
 	        direction = input.nextLine();
-	        System.out.println("you entered: " + direction);
+
+			if (checkAvailablilty(direction))
+			{
+				moveRoom(this.curRoom.getDestination(direction));
+				System.out.println("\nYou entered: " + this.curRoom + " to the " + direction + "\n");
+				this.curRoom.display();
+				System.out.println("");
+			}
+			else 
+			{
+				System.out.println("\nYou cannot go to the " + direction + "\n");
+			}
 	    }
 	    while(!direction.equals("exit"));
-	    System.out.println("Goodbye");
+	    System.out.println("You have left the dungeon");
     }
 }

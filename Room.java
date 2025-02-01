@@ -63,4 +63,22 @@ class Room
             System.out.println("");
         }
     }
+
+    @Override
+    public String toString()
+    {
+        return this.name;
+    }
+
+    public Room getDestination(String s)
+    {
+        for (int i=0; i<this.currNumberOfExits; i++)
+        {
+            if (s.equals(availableExits[i].getDirection()))
+            {
+                return availableExits[i].getDestinataion();
+            }
+        }
+        return null;
+    }
 }
