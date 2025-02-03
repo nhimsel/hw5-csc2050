@@ -63,7 +63,7 @@ public class Dungeon
 			}
 			else 
 			{
-				System.out.println("\nYou cannot go to the " + direction + "\n");
+				System.out.println(((!direction.equals("exit"))?"\nYou cannot go to the " + direction + "\n":""));
 			}
 	    }
 	    while(!direction.equals("exit"));
